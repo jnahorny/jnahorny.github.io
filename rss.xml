@@ -1,13 +1,9 @@
 <?xml version="1.0"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>jnahorny</title> <link>https://jnahorny.github.io</link> <atom:link href="https://jnahorny.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Wed, 07 Jun 2017 15:48:14 +0200</pubDate> <item> <title>How the stuff is set up</title> <link>https://jnahorny.github.io/posts/How-the-stuff-is-set-up.html</link> <pubDate>2017-06-07</pubDate> <author>jnahorny</author> <guid isPermaLink="true">https://jnahorny.github.io/posts/How-the-stuff-is-set-up.html</guid> <category><![CDATA[ blogging ]]></category><category><![CDATA[ lisp ]]></category><category><![CDATA[ sbcl ]]></category> <description><![CDATA[ <h1>INTRO</h1>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>jnahorny</title> <link>https://jnahorny.github.io</link> <atom:link href="https://jnahorny.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Wed, 07 Jun 2017 15:55:51 +0200</pubDate> <item> <title>How the stuff is set up</title> <link>https://jnahorny.github.io/posts/How-the-stuff-is-set-up.html</link> <pubDate>2017-06-07</pubDate> <author>jnahorny</author> <guid isPermaLink="true">https://jnahorny.github.io/posts/How-the-stuff-is-set-up.html</guid> <category><![CDATA[ blogging ]]></category><category><![CDATA[ lisp ]]></category><category><![CDATA[ sbcl ]]></category> <description><![CDATA[ <h1>INTRO</h1>
 
 <p>Every geek's blog must contain an entry describing how it is set up. Let's do it!</p>
 
-<p>The blog is static, and is generated from markdown using Flexible Lisp Blogware <a href="https://github.com/kingcons/coleslaw" >coleslaw</a>. </p>
-
-<p><a href="https://www.gnu.org/software/emacs/" >GNU Emacs</a> has always been my editor of choice, but few weeks ago I've decided to give <a href="http://spacemacs.org/" >Spacemacs</a> a try and I like it so far.</p>
-
-<p>You should really be able to set everything up using instructions on <em>coleslaw</em> github, but if you need more details, read on.</p>
+<p>The blog is static, and is generated from markdown using Flexible Lisp Blogware <a href="https://github.com/kingcons/coleslaw" >coleslaw</a>. <a href="https://www.gnu.org/software/emacs/" >GNU Emacs</a> has always been my editor of choice, but few weeks ago I've decided to give <a href="http://spacemacs.org/" >Spacemacs</a> a try and I like it so far. You should really be able to set everything up using instructions on <em>coleslaw</em> github, but if you need more details, read on.</p>
 
 <h2>Install Common Lisp</h2>
 
