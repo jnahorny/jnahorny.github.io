@@ -1,5 +1,5 @@
 (:author "jnahorny"
- :deploy-dir "$HOME/scm/jnahorny.github.io/"
+ :deploy-dir "$HOME/tmp/_generated_jnahorny.github.io/"
  :domain "https://jnahorny.github.io"
  :feeds ("lisp")
  :plugins (
