@@ -1,0 +1,92 @@
+---
+title: How the stuff is set up
+date: 2017-06-07
+tags: blogging, lisp, sbcl
+format: md
+---
+
+# INTRO
+
+Every geek's blog must contain an entry describing how it is set up. Let's do it!
+
+The blog is static, and is generated from markdown using Flexible Lisp Blogware [coleslaw](https://github.com/kingcons/coleslaw). [GNU Emacs](https://www.gnu.org/software/emacs/) has always been my editor of choice, but few weeks ago I've decided to give [Spacemacs](http://spacemacs.org/) a try and I like it so far. You should really be able to set everything up using instructions on *coleslaw* github, but if you need more details, read on.
+
+## Install Common Lisp
+
+Of course you need a Common Lisp. In case you don't have one installed already (how come?!?) use [SBCL](http://www.sbcl.org). On macOS, it's a matter of running `brew install sbcl` if you are using [Homebrew](https://brew.sh/). On Linux: there's high chance SBCL is packaged for your distro, so just try `{apt-get,dnf} install sbcl`.
+
+Next step is to install `quicklisp` (library manager for Common Lisp). Just perform the installation procedure covered on the quicklisp's [home page](https://www.quicklisp.org).
+
+Last thing: install and configure [SLIME](https://common-lisp.net/project/slime/) which will greatly improve your experience with Common Lisp inside Emacs.
+In case of plain Emacs, follow the procedure covered in [user manual](https://common-lisp.net/project/slime/doc/html/). If you use Spacemacs, you actually need to do just 2 things:
+
+* add `common-lisp` to `dotspacemacs-configuration-layers`,
+* point Emacs to the SBCL binary you've installed by adding following to `dotspacemacs/user-config`:
+
+```elisp
+  (setq inferior-lisp-program "/usr/local/bin/sbcl")
+```
+
+## Install and configure coleslaw
+
+Now, run `M-x slime` in Emacs, which starts a `*slime-repl*`. Type `(ql:quickload :coleslaw)` and you should see quicklisp resolving dependencies and installing packages one by one. In my example below, I already have *coleslaw* installed, so the output is short.
+
+```common-lisp
+; SLIME 2.19
+CL-USER> (ql:quickload :coleslaw)
+To load "coleslaw":
+  Load 1 ASDF system:
+    coleslaw
+; Loading "coleslaw"
+...................
+(:COLESLAW)
+CL-USER> 
+```
+
+The configuration of the blog is in `.coleslawrc`. You can put it directly in your `$HOME`, but it's smart to have it in the project directory (will be version-controlled, plus, you may want to have multiple blogs / pages in the future). [Example config file](https://github.com/kingcons/coleslaw/blob/master/examples/example.coleslawrc) is an excellent starting point. I may tweak it at some point, but now my main addition is:
+
+```common-lisp
+:separator "---"
+```
+Posts have `*.post` extension, pages -- `*page`. Header of a `page`:
+
+```markdown
+---
+title: About
+format: md
+url: about.html
+---
+```
+
+...and of a `post`:
+
+```markdown
+---
+title: How the stuff is set up
+date: 2017-06-07
+tags: blogging, lisp, sbcl
+format: md
+---
+```
+
+Layout of the project:
+
+```
+|-> assets/
+    |-> cute_kitty.jpg
+|-> posts/
+    |-> 0x0000-how-this-is-set-up.post
+|-> .coleslawrc
+|-> about.page
+```
+
+I store the whole project directory in the `src` branch of my github.io, and generated static page -- in the `master` branch, so that it is published by running `git push`.
+
+To generate the blog, go back to `*slime-repl*` and run:
+
+```common-lisp
+CL-USER> (coleslaw:main "/path/to/the/directory/with/your/blog/source/")
+```
+
+That's it!
+
