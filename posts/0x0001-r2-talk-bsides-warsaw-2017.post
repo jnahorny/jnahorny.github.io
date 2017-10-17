@@ -5,5 +5,11 @@ tags: radare2, r2, reverse engineering
 format: md
 ---
 
-# INTRO
-Let's try if this works
+# The talk
+Last weekend I was giving a talk at [BSides Warsaw](http://www.securitybsides.com/w/page/118926312/BSIDES_WARSAW_2017) about reverse engineering using [radare2](https://radare.org). I think it went quite OK, I've received some positive feedback, I hope I've managed to encourage at least few people to give `radare2` a try. Recording of the talk (in Polish) is available [here](https://www.youtube.com/watch?v=aUYsb1RwN-U). The slides are in English, and you can find them [here](https://jnahorny.github.io/assets/r2-how_to_start-LIGHT.pdf).
+
+# The binaries
+If you'd like to play a bit with the binaries, download the archive from [here](https://jnahorny.github.io/assets/bsides2017-demo-materials.tar.gz). Apart of binaries, there are source files in that archive too. You can compile them yourself (eg. using the `Makefile` that is also there). Just be aware, depending on your OS, you may end up with slightly different binaries: the code can be placed in different memory address. The binaries I give you are compiled on Fedora 26, with the flags as shown in the `Makefile`.
+
+I'll add a short HOWTO (in both Polish and English), with exact `radare2` commands later this week, as at the moment I'm too busy (sorry). I'll update this post when this happens and notify on [twitter](https://twitter.com/JaroslavNahorny), so stay tuned!
+
